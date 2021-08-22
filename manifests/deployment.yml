@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mavendocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mavendocker
+  template:
+    metadata:
+      labels:
+        app: mavendocker 
+    spec:
+      containers:
+        - name: mavendocker 
+          image: mymavenwebapp.azurecr.io/mavendocker
+          ports:
+          - containerPort: 8080
