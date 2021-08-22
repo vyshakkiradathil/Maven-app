@@ -35,12 +35,10 @@ stages:
       inputs:
         SonarQube: 'SonarQube'
         scannerMode: 'Other'
-        extraProperties: 'sonar.projectKey=sonar.projectKey
-
+        extraProperties: 'sonar.projectKey=sonar.projectKey'
     - task: MavenAuthenticate@0
       inputs:
-        mavenServiceConnections: 'nexus' 
-
+        mavenServiceConnections: 'nexus'
     - task: Maven@3
       inputs:
         mavenPomFile: 'pom.xml'
@@ -50,7 +48,7 @@ stages:
         mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
-        sonarQubeRunAnalysis: false
+        sonarQubeRunAnalysis: true
         goals: 'clean package deploy'
 
     - task: SonarQubePublish@4
