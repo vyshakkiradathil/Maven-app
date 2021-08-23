@@ -1,14 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('pull repo') {
-      steps {
-        git(url: 'https://github.com/vyshakkiradathil/react-project.git', branch: 'master')
-      }
-    }
-
     stage('Build') {
       steps {
+        git(url: 'https://github.com/vyshakkiradathil/react-project.git', branch: 'master')
         sh 'mvn clean package'
       }
     }
