@@ -16,16 +16,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
-
-
-  <repositories>
-    <repository>
-      <id>nexus</id>
-      <name>Releases</name>
-      <url>http://10.0.179.36:8081/repository/maven-public</url>
-    </repository>    
-  </repositories>  
+  </dependencies> 
 
   <distributionManagement>
     <repository>
